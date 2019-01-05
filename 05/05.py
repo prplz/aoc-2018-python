@@ -30,6 +30,8 @@ def react_without_letter(polymer, letter):
     return react(p for p in polymer if p not in lower_and_upper)
 
 
-reacted_lengths = (len(react_without_letter(polymer, letter)) for letter in string.ascii_lowercase)
+reacted_lengths = (
+    len(react_without_letter(polymer, letter)) for letter in string.ascii_lowercase
+)
 
 print(min(*reacted_lengths))

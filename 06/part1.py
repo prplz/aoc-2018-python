@@ -24,7 +24,9 @@ for x in range(min_x - 1, max_x + 2):
             infinite.add(best)
             counter.pop(best, None)
             continue
-        if all(distance > best_distance for point, distance in distances if point != best):
+        if all(
+            distance > best_distance for point, distance in distances if point != best
+        ):
             counter[best] += 1
 
 print(counter.most_common(1)[0][1])

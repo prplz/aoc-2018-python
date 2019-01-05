@@ -8,11 +8,13 @@ with open('in.txt') as f:
 
 for first in claims:
     for second in claims:
-        if (first != second and
-                second.x <= first.x + first.width and
-                second.x + second.width >= first.x and
-                second.y <= first.y + first.height and
-                second.y + second.height >= first.y):
+        if (
+            first != second
+            and second.x <= first.x + first.width
+            and second.x + second.width >= first.x
+            and second.y <= first.y + first.height
+            and second.y + second.height >= first.y
+        ):
             break
     else:
         print(first.id)

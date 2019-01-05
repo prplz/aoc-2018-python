@@ -29,8 +29,10 @@ remaining = set(chars)
 workers = [None] * 5
 time = 0
 
+
 def work_time(char):
     return 61 + ord(char) - ord('A')
+
 
 while True:
     for i, worker in enumerate(workers):
@@ -39,7 +41,10 @@ while True:
             workers[i] = None
     for i, worker in enumerate(workers):
         if worker is None:
-            next_char = min((char for char in remaining if requirements[char] <= set(result)), default=None)
+            next_char = min(
+                (char for char in remaining if requirements[char] <= set(result)),
+                default=None,
+            )
             if next_char:
                 remaining.remove(next_char)
                 workers[i] = Worker(next_char, time + work_time(next_char))
