@@ -40,7 +40,7 @@ def play(player_count, length):
     current.next = current
     current.previous = current
     scores = Counter()
-    for i in range(0, length):
+    for i in range(length):
         value = i + 1
         if value % 23 == 0:
             current = current.back(7)

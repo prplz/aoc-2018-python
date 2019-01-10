@@ -5,7 +5,7 @@ def play(player_count, length):
     field = [0]
     current = 0
     scores = Counter()
-    for i in range(0, length):
+    for i in range(length):
         value = i + 1
         if value % 23 == 0:
             current = (current - 7) % len(field)
