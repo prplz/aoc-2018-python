@@ -48,7 +48,8 @@ def play(player_count, length):
             scores[player] += current.value + value
             current = current.remove()
         else:
-            current = current.forward(2).insert(value)
+            # optimization, was current.forward(2).insert(value)
+            current = current.next.next.insert(value)
     [(_, winner_score)] = scores.most_common(1)
     return winner_score
 
